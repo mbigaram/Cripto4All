@@ -1,5 +1,7 @@
-import React from 'react'
 import "./Header.css"
+import avatar from "../../img/avatar.png"
+import logo from "../../img/logo.svg"
+import React from "react";
 import {
   Box,
   Flex,
@@ -26,9 +28,11 @@ const NavLink = ({ children }) => (
     px={2}
     py={1}
     rounded={'md'}
+    color={'#DBDBDB'}
     _hover={{
       textDecoration: 'none',
-      bg: useColorModeValue('gray.200', 'gray.700'),
+      color: '#292929',
+      bg: useColorModeValue('#DBDBDB', '#DBDBDB'),
     }}
     href={'#'}>
     {children}
@@ -36,11 +40,13 @@ const NavLink = ({ children }) => (
 );
 
 export default function Header() {
+
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <>
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
+    <div>
+      
+      <Box bg={useColorModeValue('#292929', '#292929')} px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}
@@ -50,7 +56,8 @@ export default function Header() {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={'center'}>
-            <Box>Logo</Box>
+            {/* <Box >Logo</Box> */}
+            <img className="logo" src={logo} alt="logo"/>
             <HStack
               as={'nav'}
               spacing={4}
@@ -70,16 +77,35 @@ export default function Header() {
                 minW={0}>
                 <Avatar
                   size={'sm'}
-                  src={
-                    'https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9'
-                  }
+                  src={avatar}
                 />
               </MenuButton>
-              <MenuList>
-                <MenuItem>Link 1</MenuItem>
-                <MenuItem>Link 2</MenuItem>
+              <MenuList
+              color={'#292929'}
+              bg= {'#DBDBDB'}
+              >
+                <MenuItem
+                bg= {'#DBDBDB'}
+                _hover={{
+                  textDecoration: 'none',
+                  color: '#DBDBDB',
+                  bg: useColorModeValue('#292929', '#292929'),
+                }}>Link 1</MenuItem>
+                <MenuItem
+                bg= {'#DBDBDB'}
+                _hover={{
+                  textDecoration: 'none',
+                  color: '#DBDBDB',
+                  bg: useColorModeValue('#292929', '#292929'),
+                }}>Link 2</MenuItem>
                 <MenuDivider />
-                <MenuItem>Link 3</MenuItem>
+                <MenuItem
+                bg= {'#DBDBDB'}
+                _hover={{
+                  textDecoration: 'none',
+                  color: '#DBDBDB',
+                  bg: useColorModeValue('#292929', '#292929'),
+                }}>Link 3</MenuItem>
               </MenuList>
             </Menu>
           </Flex>
@@ -96,8 +122,10 @@ export default function Header() {
         ) : null}
       </Box>
 
-      <Box p={4}>Main Content Here</Box>
-    </>
+      <Box color='#f00' p={4}> main
+      </Box>
+    
+    </div>
   );
 }
 
