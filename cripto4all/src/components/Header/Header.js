@@ -121,9 +121,6 @@ export default function Header() {
           </Box>
         ) : null}
       </Box>
-
-      <Box color='#f00' p={4}> main
-      </Box>
     
     </div>
   );
