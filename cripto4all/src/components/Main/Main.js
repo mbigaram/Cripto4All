@@ -31,6 +31,7 @@ const Main = () => {
                     <input type="text" placeholder="Search" className="coin-input" onChange={handleChange} />
                 </form>
             </div>
+            <div className="coin-cards">
             {filteredCoins.map(coin => {
                 return (
                      <Coin 
@@ -44,7 +45,9 @@ const Main = () => {
                     volume={coin.total_volume}
                     />
                 )
+                
             })}
+            </div>
         </div>
     )
 }

@@ -1,6 +1,6 @@
 import "./Header.css"
 import avatar from "../../img/avatar.png"
-import logo from "../../img/logo.svg"
+import logo from "../../img/logo-pira.svg"
 import React from "react";
 import {
   Box,
@@ -28,11 +28,11 @@ const NavLink = ({ children }) => (
     px={2}
     py={1}
     rounded={'md'}
-    color={'#DBDBDB'}
+    color={'#D29F0A'}//#1F2127
     _hover={{
       textDecoration: 'none',
       color: '#292929',
-      bg: useColorModeValue('#DBDBDB', '#DBDBDB'),
+      bg: useColorModeValue('#D29F0A', '#DBDBDB'),
     }}
     href={'#'}>
     {children}
@@ -56,8 +56,10 @@ export default function Header() {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={'center'}>
-            {/* <Box >Logo</Box> */}
+            <Flex >
             <img className="logo" src={logo} alt="logo"/>
+            <h1 className="logo-name">PiraCripto</h1>
+            </Flex>
             <HStack
               as={'nav'}
               spacing={4}
@@ -76,7 +78,9 @@ export default function Header() {
                 cursor={'pointer'}
                 minW={0}>
                 <Avatar
-                  size={'sm'}
+                  border='2px' 
+                  color={'#D29F0A'}
+                  size={'md'}
                   src={avatar}
                 />
               </MenuButton>
@@ -88,14 +92,14 @@ export default function Header() {
                 bg= {'#DBDBDB'}
                 _hover={{
                   textDecoration: 'none',
-                  color: '#DBDBDB',
+                  color: '#D29F0A',
                   bg: useColorModeValue('#292929', '#292929'),
                 }}>Link 1</MenuItem>
                 <MenuItem
                 bg= {'#DBDBDB'}
                 _hover={{
                   textDecoration: 'none',
-                  color: '#DBDBDB',
+                  color: '#D29F0A',
                   bg: useColorModeValue('#292929', '#292929'),
                 }}>Link 2</MenuItem>
                 <MenuDivider />
@@ -103,7 +107,7 @@ export default function Header() {
                 bg= {'#DBDBDB'}
                 _hover={{
                   textDecoration: 'none',
-                  color: '#DBDBDB',
+                  color: '#D29F0A',
                   bg: useColorModeValue('#292929', '#292929'),
                 }}>Link 3</MenuItem>
               </MenuList>
