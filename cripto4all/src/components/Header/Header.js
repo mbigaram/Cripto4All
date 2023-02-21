@@ -52,15 +52,24 @@ export default function Header() {
     <div>
 
       <Box bg={useColorModeValue('#292929', '#292929')} px={4}>
-        <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
+        <Flex h={90} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
+            bg={'#D29F0A'}
             size={'md'}
+            fontSize={19}
+            _hover={{
+              textDecoration: 'none',
+              color: '#D29F0A',
+              bg: useColorModeValue('#292929', '#292929'),
+            }}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
             aria-label={'Open Menu'}
             display={{ md: 'none' }}
             onClick={isOpen ? onClose : onOpen}
           />
-          <HStack spacing={8} alignItems={'center'}>
+          <HStack
+            spacing={8}
+            alignItems={'center'}>
             <Flex >
               <img className="logo" src={logo} alt="logo" />
               <h1 className="logo-name">PiraCripto</h1>
@@ -99,7 +108,7 @@ export default function Header() {
                 <Avatar
                   border='2px'
                   color={'#D29F0A'}
-                  size={'md'}
+                  size={'lg'}
                   src={avatar}
                 />
               </MenuButton>
