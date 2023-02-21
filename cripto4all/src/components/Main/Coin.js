@@ -27,7 +27,7 @@ const Coin = ({ name, image, symbol, price, volume, priceChange, marketcap }) =>
                     
                     <p className="coin-price">${price.toLocaleString()}</p>
                     </div>
-                    <input className="coin-button" type="button" value="add to wallet"/>
+                    <input className="coin-button" type="button" value="add to portfolio"/>
                     </div>
                 </div>
 

@@ -1,6 +1,6 @@
 .coin-container{
     display: flex;
-    padding: 20px;
+    padding: 10px;
     margin: 0 auto;
     
 }
@@ -14,7 +14,7 @@
     border: 2px solid #D29F0A;
     border-radius: 10px;
     width: 400px;
-    background: #4d4630;
+    background: #292929;
 }
 
 .coin{
@@ -47,10 +47,10 @@
     width: 100%;
 }
 
-.coin-price {
-    /*width: 100px;*/
-    font-size: larger;
-}
+/* .coin-price {
+    width: 100px;
+    font-size: larger; 
+} */
 
 .coin-vol-mkt{
     display: flex;
@@ -60,12 +60,14 @@
 
 .coin-percent-price{
     display: flex;
+    font-size: larger;
     gap: 15px;
     align-items: center;
 }
 .coin-button{
-    padding:6px 20px;
+    padding:6px 10px;
     color:#D29F0A;
+    width: 150px;
     background: #1a1a1c;
     border-radius: 5px;
     border: 1px solid #D29F0A
@@ -100,7 +102,7 @@
 
 .coin-app {
     background-color: #1a1a1c;
-    color: #fff;
+    color: #D29F0A;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -109,24 +111,25 @@
 }
 
 .coin-search {
-    margin-bottom: 64px;
+    margin: 10px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.coin-text {
+/* .coin-text {
     font-size: 40px;
-    margin-bottom: 32px;
+    margin-bottom: 6px;
     text-align: center;
-}
+    color:#D29F0A
+} */
 
 .coin-input {
     padding-left: 16px;
     width: 300px;
-    height: 50px;
-    border-radius: 4px;
+    height: 40px;
+    border-radius: 5px;
     border: none;
     background-image: linear-gradient(
         -225deg,
@@ -134,11 +137,12 @@
         #c3b66d 50%,
         #797a5b 100%
     );
-    color: #e2e2e2;
+    color:  #292929;
+    
 }
 
 .coin-input::placeholder{
-    color:#e2e2e2
+    color: #292929
 }
 
 .coin-cards {

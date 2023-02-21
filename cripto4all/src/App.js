@@ -1,15 +1,16 @@
-import Header from "./components/Header/Header"
-import Main from "./components/Main/Main";
-import { ChakraProvider } from '@chakra-ui/react'
+//import HomePage from "./pages/HomePage";
+import Router from "./router/router";
 
 
 function App() {
   return (
     <div>
-      <ChakraProvider>
+      <Router />
+      {/* <HomePage/> */}
+      {/* <ChakraProvider>
         <Header />
       </ChakraProvider>
-      <Main />
+      <Main /> */}
     </div>
   );
 }

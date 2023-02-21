@@ -1,6 +1,8 @@
 import "./Header.css"
 import avatar from "../../img/avatar.png"
 import logo from "../../img/logo-pira.svg"
+import { useNavigate } from "react-router-dom";
+import { goToPortfolioPage, goToHomePage } from "../../router/coordinator";
 import React from "react";
 import {
   Box,
@@ -19,9 +21,10 @@ import {
   useColorModeValue,
   Stack,
 } from '@chakra-ui/react';
-import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'; 
+import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
+//import Portfolio from "../../pages/Portfolio";
 
-const Links = ['Dashboard', 'Projects', 'Team'];
+//const Links = ['Dashboard', 'Portfolio', 'Team'];
 
 const NavLink = ({ children }) => (
   <Link
@@ -41,11 +44,13 @@ const NavLink = ({ children }) => (
 
 export default function Header() {
 
+  const navigate = useNavigate()
+
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <div>
-      
+
       <Box bg={useColorModeValue('#292929', '#292929')} px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
@@ -57,16 +62,30 @@ export default function Header() {
           />
           <HStack spacing={8} alignItems={'center'}>
             <Flex >
-            <img className="logo" src={logo} alt="logo"/>
-            <h1 className="logo-name">PiraCripto</h1>
+              <img className="logo" src={logo} alt="logo" />
+              <h1 className="logo-name">PiraCripto</h1>
             </Flex>
-            <HStack
+            {/* <HStack
               as={'nav'}
               spacing={4}
               display={{ base: 'none', md: 'flex' }}>
               {Links.map((link) => (
                 <NavLink key={link}>{link}</NavLink>
               ))}
+            </HStack> */}
+            <HStack
+              as={'nav'}
+              spacing={4}
+              display={{ base: 'none', md: 'flex' }}>
+
+              <NavLink ><button onClick={() => goToHomePage(navigate)}>
+                <h3>Home</h3>
+              </button></NavLink>
+              <NavLink ><button onClick={() => goToPortfolioPage(navigate)}>
+                <h3>Portfolio</h3>
+              </button></NavLink>
+              <NavLink >Team</NavLink>
+
             </HStack>
           </HStack>
           <Flex alignItems={'center'}>
@@ -78,44 +97,44 @@ export default function Header() {
                 cursor={'pointer'}
                 minW={0}>
                 <Avatar
-                  border='2px' 
+                  border='2px'
                   color={'#D29F0A'}
                   size={'md'}
                   src={avatar}
                 />
               </MenuButton>
               <MenuList
-              color={'#292929'}
-              bg= {'#DBDBDB'}
+                color={'#292929'}
+                bg={'#DBDBDB'}
               >
                 <MenuItem
-                bg= {'#DBDBDB'}
-                _hover={{
-                  textDecoration: 'none',
-                  color: '#D29F0A',
-                  bg: useColorModeValue('#292929', '#292929'),
-                }}>Link 1</MenuItem>
+                  bg={'#DBDBDB'}
+                  _hover={{
+                    textDecoration: 'none',
+                    color: '#D29F0A',
+                    bg: useColorModeValue('#292929', '#292929'),
+                  }}>Link 1</MenuItem>
                 <MenuItem
-                bg= {'#DBDBDB'}
-                _hover={{
-                  textDecoration: 'none',
-                  color: '#D29F0A',
-                  bg: useColorModeValue('#292929', '#292929'),
-                }}>Link 2</MenuItem>
+                  bg={'#DBDBDB'}
+                  _hover={{
+                    textDecoration: 'none',
+                    color: '#D29F0A',
+                    bg: useColorModeValue('#292929', '#292929'),
+                  }}>Link 2</MenuItem>
                 <MenuDivider />
                 <MenuItem
-                bg= {'#DBDBDB'}
-                _hover={{
-                  textDecoration: 'none',
-                  color: '#D29F0A',
-                  bg: useColorModeValue('#292929', '#292929'),
-                }}>Link 3</MenuItem>
+                  bg={'#DBDBDB'}
+                  _hover={{
+                    textDecoration: 'none',
+                    color: '#D29F0A',
+                    bg: useColorModeValue('#292929', '#292929'),
+                  }}>Link 3</MenuItem>
               </MenuList>
             </Menu>
           </Flex>
         </Flex>
 
-        {isOpen ? (
+        {/* {isOpen ? (
           <Box pb={4} display={{ md: 'none' }}>
             <Stack as={'nav'} spacing={4}>
               {Links.map((link) => (
@@ -123,9 +142,24 @@ export default function Header() {
               ))}
             </Stack>
           </Box>
+        ) : null} */}
+        {isOpen ? (
+          <Box pb={4} display={{ md: 'none' }}>
+            <Stack as={'nav'} spacing={4}>
+
+              <NavLink ><button onClick={() => goToHomePage(navigate)}>
+                <h3>Home</h3>
+              </button></NavLink>
+              <NavLink ><button onClick={() => goToPortfolioPage(navigate)}>
+                <h3>Portfolio</h3>
+              </button></NavLink>
+              <NavLink >Team</NavLink>
+
+            </Stack>
+          </Box>
         ) : null}
       </Box>
-    
+
     </div>
   );
 }
