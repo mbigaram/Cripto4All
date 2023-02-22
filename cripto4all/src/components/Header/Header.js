@@ -114,17 +114,17 @@ export default function Header() {
               </MenuButton>
               <MenuList
                 color={'#292929'}
-                bg={'#DBDBDB'}
+                bg={'#D29F0A'}
               >
                 <MenuItem
-                  bg={'#DBDBDB'}
+                  bg={'#D29F0A'}
                   _hover={{
                     textDecoration: 'none',
                     color: '#D29F0A',
                     bg: useColorModeValue('#292929', '#292929'),
                   }}>Link 1</MenuItem>
                 <MenuItem
-                  bg={'#DBDBDB'}
+                  bg={'#D29F0A'}
                   _hover={{
                     textDecoration: 'none',
                     color: '#D29F0A',
@@ -132,7 +132,7 @@ export default function Header() {
                   }}>Link 2</MenuItem>
                 <MenuDivider />
                 <MenuItem
-                  bg={'#DBDBDB'}
+                  bg={'#D29F0A'}
                   _hover={{
                     textDecoration: 'none',
                     color: '#D29F0A',

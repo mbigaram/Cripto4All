@@ -3,6 +3,7 @@ import { BASE_URL } from "../../constant/url"
 import axios from "axios"
 import Coin from './Coin'
 
+
 const Main = () => {
     const [coins, setCoins] = useState([])
     const [search, setSearch] = useState("")
@@ -21,7 +22,7 @@ const Main = () => {
     const filteredCoins = coins.filter(coin =>
         coin.name.toLowerCase().includes(search.toLowerCase()))
 
-        console.log(filteredCoins)
+        console.log(coins)
 
     return (
         <div className="coin-app">
