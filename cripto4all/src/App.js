@@ -6,11 +6,6 @@ function App() {
   return (
     <div>
       <Router />
-      {/* <HomePage/> */}
-      {/* <ChakraProvider>
-        <Header />
-      </ChakraProvider>
-      <Main /> */}
     </div>
   );
 }
